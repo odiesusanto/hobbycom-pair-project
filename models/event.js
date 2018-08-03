@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
 
     const mailOptions = {
     from: 'HobbyCom', // sender address
-    to: `fajartc02@gmail.com`, // list of receivers
+    to: `ngurahwisnugautama@gmail.com`, // list of receivers
     subject: 'Confirm your attendance', // Subject line
     html: '<a href="http://localhost:3000/">Confirm Attendance</a><br><br> Thank you for your interest in this event. Please click the link below to confirm your attendance. We look forward to having you there!' // plain text body
   };
