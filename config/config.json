@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "HOBBYCOM",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "iykgnqsscaiiim",
+    "password": "fc9a98bcc900d911398c526594f7172dcaede3d4b4e72d718554090db0ca6571",
+    "database": "d7pl6uhqdgevf5",
+    "host": "ec2-107-22-192-11.compute-1.amazonaws.com",
+    "dialect": "postgres"
+  }
+}

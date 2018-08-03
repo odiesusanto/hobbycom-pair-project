@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="vertical-center-row">
+            <div align="center">
+                <h1>
+                    <%= title %>
+                </h1>
+                <br>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>ID</th>
+                        <th>Event Name</th>
+                        <th>Schedule</th>
+                        <th>Quota</th>
+                        <th>Attendance</th>
+                        <td>Actions</td>
+                    </tr>
+                    <% eventData.forEach(event => { %>
+                        <tr>
+                            <td>
+                                <%= event.id %>
+                            </td>
+                            <td>
+                                <%= event.event_name %>
+                            </td>
+                            <td>
+                                <%= dateTime(event.schedule) %>
+                            </td>
+                            <td>
+                                <%= event.quota %>
+                            </td>
+                            <td>
+                                <%= event.attendance %>
+                            </td>
+                            <td>
+                                <a href="/eventscontrol/add">Add</a> ||
+                                <a href="/eventscontrol/edit/<%= event.id %>">Edit</a> ||
+                                <a href="/eventscontrol/delete/<%= event.id %>" onclick="return confirm('Are you sure you want to delete this event\'s data?')">Delete</a>
+                            </td>
+                          
+                        </tr>
+                        <% })%>
+                </table>
+                <div align="center">
+                        <a href="/dashboard-admin" class="btn btn-primary" role="button">Back to Admin Home</a>
+                    </div>
+
+
+
+</body>
+
+</html>

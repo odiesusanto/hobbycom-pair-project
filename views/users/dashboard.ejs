@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>User dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div align="right">
+            <button class="btn btn-info">
+                <%- include('../partials/footerlogout.ejs') -%>
+            </button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="vertical-center-row">
+            <div align="center">
+                <h1>
+                    Hi, <%= hobbiesData.first_name %>!
+                </h1>
+                <br>
+                <br>
+                <form action="/dashboard" method="POST">
+                    <select name="HobbyId">
+                        <option value="">Select More Hobbies:</option>
+                        <% hobbies.forEach(hobby => { %>
+                            <option value="<%= hobby.id %>">
+                                <%= hobby.hobby_name %>
+                            </option>
+                            <% }) %>
+                    </select>
+                    <button type="submit">Save</button>
+                </form>
+                <br>
+                <hr>
+                <div class="container">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Category</th>
+                            <th>Hobby Name</th>
+                        </tr>
+                        <% hobbiesData.Hobbies.forEach(hobby => { %>
+                            <tr>
+                                <td>
+                                    <%= hobby.category %>
+                                </td>
+                                <td>
+                                    <a href="/hobby/<%= hobby.id %>">
+                                        <%= hobby.hobby_name %>
+                                    </a>
+                                </td>
+                            </tr>
+                            <% })%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

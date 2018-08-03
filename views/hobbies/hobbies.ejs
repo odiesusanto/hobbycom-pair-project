@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>User dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="vertical-center-row">
+            <div align="center">
+                <h1>
+                    <%= data.hobby_name %>
+                </h1>
+                <br>
+
+                <br>
+                <div class="container">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, explicabo minus magnam perspiciatis ratione, ut, in atque
+                    blanditiis ipsum soluta doloremque commodi iure illum error eveniet suscipit aliquam rem provident.
+                </div>
+                <hr>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Schedule</th>
+                        <th>Quota</th>
+                        <th>Attendance</th>
+                        <th>Interested?</th>
+                    </tr>
+                    <% data.Events.forEach(event => { %>
+                        <tr>
+                            <td>
+                                <%= event.event_name %>
+                            </td>
+                            <td>
+                                <%= dateTime(event.schedule) %>
+                            </td>
+                            <td>
+                                <%= event.quota %>
+                            </td>
+                            <td>
+                                <%= event.attendance %>
+                            </td>
+                            <td>
+                                <form action="/hobby/<%= data.id %>/event/<%= event.id %>" method="POST">
+                                   <button>Yes</button>
+                                   
+                                </form>
+
+                            </td>
+                        </tr>
+                        <% })%>
+
+                </table>
+                <a href="/dashboard" class="btn btn-primary" role="button">Back to Home</a>
+                <br>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
