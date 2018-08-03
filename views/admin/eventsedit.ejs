@@ -12,39 +12,44 @@
 </head>
 
 <body>
+    <div align="right">
+        <button class="btn btn-info">
+            <%- include('../partials/footerlogout.ejs') -%>
+        </button>
+    </div>
     <h1>
         <%= title %>
     </h1>
 
     <% if (error !== null) { %>
-        <div class="alert alert-danger"><%= error %></div>
+        <div class="alert alert-danger">
+            <%= error %>
+        </div>
+        </div>
+        <%} %>
+            <div>
+                <form action="/eventscontrol/edit/<%= editEvent.id %>" method="POST">
+                    Event Name:
+                    <br>
+                    <input type="text" name="event_name" value="<%= editEvent.event_name %>">
+                    <br>
+                    <br> Quota:
+                    <br>
+                    <input type="text" name="quota" value="<%= editEvent.quota %>">
+                    <br>
+                    <br> Schedule:
+                    <br>
+                    <input type="date" name="schedule" min="2018-01-01">
+                    <br>
+                    <br>
+                    <button type="submit" value="Confirm Edit">Confirm Edit</button>
+                </form>
             </div>
-            <%} %>
-                <div>
-                    <form action="/eventscontrol/edit/<%= editEvent.id %>" method="POST">
-                        Event Name:
-                        <br>
-                        <input type="text" name="event_name" value="<%= editEvent.event_name %>">
-                        <br>
-                        <br> 
-                        Quota:
-                        <br>
-                        <input type="text" name="quota" value="<%= editEvent.quota %>">
-                        <br>
-                        <br>
-                        Schedule:
-                        <br>
-                        <input type="date" name="schedule" min="2018-01-01">
-                        <br>
-                        <br>
-                        <button type="submit" value="Confirm Edit">Confirm Edit</button>
-                    </form>
-                </div>
-                <br>
-                <div align="left">
-                    <a href="/eventscontrol" class="btn btn-primary" role="button">Back to Events Control</a>
-                    <a href="/dashboard-admin" class="btn btn-primary" role="button">Back to Admin Home</a>
-                </div>
+            <br>
+            <div align="left">
+                <a href="/eventscontrol" class="btn btn-primary" role="button">Back to Events Control</a>
+                <a href="/dashboard-admin" class="btn btn-primary" role="button">Back to Admin Home</a>
+            </div>
 </body>
 
 </html>

@@ -12,38 +12,45 @@
 </head>
 
 <body>
+    <div align="right">
+        <button class="btn btn-info">
+            <%- include('../partials/footerlogout.ejs') -%>
+        </button>
+    </div>
     <div class="container">
         <div class="vertical-center-row">
             <div align="left">
                 <h1>
                     <%= title %>
                 </h1>
-         
+
                 <% if (error !== null) { %>
-                    <div class="alert alert-danger"><%= error %></div>
-                  <% } %>
+                    <div class="alert alert-danger">
+                        <%= error %>
+                    </div>
+                    <% } %>
             </div>
-                <div>
-                    <form action="/hobbiescontrol/add" method="POST">
-                        Hobby Name:
-                        <br>
-                        <input type="text" name="hobby_name" placeholder="Hobby Name">
-                        <br>
-                        <br> Category:
-                        <br>
-                        <input type="text" name="category" placeholder="Category">
-                        <br>
-                        <br>
-                        <button type="submit" value="Submit">Submit</button>
-                    </form>
-                </div>
-                <br>
-                <div align="left">
-                    <a href="/dashboard-admin" class="btn btn-primary" role="button">Back to Homepage</a>
-                    </button>
-                </div>
+            <div>
+                <form action="/hobbiescontrol/add" method="POST">
+                    Hobby Name:
+                    <br>
+                    <input type="text" name="hobby_name" placeholder="Hobby Name">
+                    <br>
+                    <br> Category:
+                    <br>
+                    <input type="text" name="category" placeholder="Category">
+                    <br>
+                    <br>
+                    <button type="submit" value="Submit">Submit</button>
+                </form>
+            </div>
+            <br>
+            <div align="left">
+                <a href="/dashboard-admin" class="btn btn-primary" role="button">Back to Homepage</a>
+                </button>
             </div>
         </div>
+    </div>
     </div>
 </body>
 

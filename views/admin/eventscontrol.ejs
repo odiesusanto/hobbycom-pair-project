@@ -12,6 +12,11 @@
 </head>
 
 <body>
+    <div align="right">
+        <button class="btn btn-info">
+            <%- include('../partials/footerlogout.ejs') -%>
+        </button>
+    </div>
     <div class="container">
         <div class="vertical-center-row">
             <div align="center">
@@ -50,13 +55,13 @@
                                 <a href="/eventscontrol/edit/<%= event.id %>">Edit</a> ||
                                 <a href="/eventscontrol/delete/<%= event.id %>" onclick="return confirm('Are you sure you want to delete this event\'s data?')">Delete</a>
                             </td>
-                          
+
                         </tr>
                         <% })%>
                 </table>
                 <div align="center">
-                        <a href="/dashboard-admin" class="btn btn-primary" role="button">Back to Admin Home</a>
-                    </div>
+                    <a href="/dashboard-admin" class="btn btn-primary" role="button">Back to Admin Home</a>
+                </div>
 
 
 

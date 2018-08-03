@@ -12,6 +12,11 @@
 </head>
 
 <body>
+    <div align="right">
+        <button class="btn btn-info">
+            <%- include('../partials/footerlogout.ejs') -%>
+        </button>
+    </div>
     <div class="container">
         <div class="vertical-center-row">
             <div align="center">
@@ -50,8 +55,8 @@
                             </td>
                             <td>
                                 <form action="/hobby/<%= data.id %>/event/<%= event.id %>" method="POST">
-                                   <button>Yes</button>
-                                   
+                                    <button>Yes</button>
+
                                 </form>
 
                             </td>

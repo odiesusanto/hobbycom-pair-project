@@ -12,33 +12,40 @@
 </head>
 
 <body>
+    <div align="right">
+        <button class="btn btn-info">
+            <%- include('../partials/footerlogout.ejs') -%>
+        </button>
+    </div>
     <h1>
         <%= title %>
     </h1>
 
     <% if (error !== null) { %>
-        <div class="alert alert-danger"><%= error %></div>
+        <div class="alert alert-danger">
+            <%= error %>
+        </div>
+        </div>
+        <%} %>
+            <div>
+                <form action="/hobbiescontrol/edit/<%= editHobby.id %>" method="POST">
+                    Hobby Name:
+                    <br>
+                    <input type="text" name="hobby_name" value="<%= editHobby.hobby_name %>">
+                    <br>
+                    <br> Category:
+                    <br>
+                    <input type="text" name="category" value="<%= editHobby.category %>">
+                    <br>
+                    <br>
+                    <button type="submit" value="Confirm Edit">Confirm Edit</button>
+                </form>
             </div>
-            <%} %>
-                <div>
-                    <form action="/hobbiescontrol/edit/<%= editHobby.id %>" method="POST">
-                        Hobby Name:
-                        <br>
-                        <input type="text" name="hobby_name" value="<%= editHobby.hobby_name %>">
-                        <br>
-                        <br> Category:
-                        <br>
-                        <input type="text" name="category" value="<%= editHobby.category %>">
-                        <br>
-                        <br>
-                        <button type="submit" value="Confirm Edit">Confirm Edit</button>
-                    </form>
-                </div>
-                <br>
-                <div align="left">
-                    <a href="/hobbiescontrol" class="btn btn-primary" role="button">Back to Hobbies Control</a>
-                    <a href="/dashboard-admin" class="btn btn-primary" role="button">Back to Admin Home</a>
-                </div>
+            <br>
+            <div align="left">
+                <a href="/hobbiescontrol" class="btn btn-primary" role="button">Back to Hobbies Control</a>
+                <a href="/dashboard-admin" class="btn btn-primary" role="button">Back to Admin Home</a>
+            </div>
 </body>
 
 </html>
